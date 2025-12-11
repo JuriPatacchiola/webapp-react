@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Footer() {
 
 
@@ -55,7 +57,7 @@ export default function Footer() {
                                         {
                                             footerMenu?.links.map(item =>
 
-                                                <li key={item.id}><a href={item.link}>{item.text}</a></li>
+                                                <li key={item.id}><Link to={item.link}>{item.text}</Link></li>
                                             )}
 
                                     </ul>
