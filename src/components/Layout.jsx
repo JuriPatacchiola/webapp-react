@@ -7,7 +7,7 @@ export default function Layout() {
     return (
         <>
             <Header />
-            <main className="vh-100">
+            <main className="">
                 <Outlet />
             </main>
             <Footer />
