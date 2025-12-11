@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Layout from "./components/Layout"
-import Home from "./pages/Home"
 import Contact from "./pages/Contact"
+import Home from "./pages/Home"
+import MovieDetail from "./pages/MovieDetail"
 function App() {
 
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />}></Route>
             <Route path="/contacts" element={<Contact />}></Route>
+            <Route path="/movies/:id" element={<MovieDetail />} />
           </Route>
         </Routes>
       </BrowserRouter>

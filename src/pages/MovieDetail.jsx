@@ -1,0 +1,24 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+export default function MovieDetail() {
+    const { id } = useParams();
+    const [film, setFilm] = useState(null);
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/movies/${id}`)
+            .then(res => res.json())
+            .then(data => setFilm(data));
+    }, [id]);
+
+    if (!film) return <p>Loading...</p>;
+
+    return (
+        <div className="container py-4">
+            <h1>{film.title}</h1>
+            <img src={film.image} alt={film.title} className="img-fluid mb-4" />
+            <p>{film.abstract}</p>
+            <p>{film.description}</p>
+        </div>
+    );
+}
