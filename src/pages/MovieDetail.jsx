@@ -14,11 +14,28 @@ export default function MovieDetail() {
     if (!film) return <p>Loading...</p>;
 
     return (
-        <div className="container py-4">
-            <h1>{film.title}</h1>
-            <img src={film.image} alt={film.title} className="img-fluid mb-4" />
-            <p>{film.abstract}</p>
-            <p>{film.description}</p>
-        </div>
+        <>
+            <div className="container py-4">
+                <h1>{film?.title}</h1>
+                <img src={film?.image} alt={film?.title} className="img-fluid mb-4" />
+                <p>{film?.abstract}</p>
+                <p>{film?.description}</p>
+
+            </div>
+            <section id="reviewsList">
+                <div className="container">
+                    <h3 className="mb-4">Reviews</h3>
+
+                    {film?.reviews.map(review =>
+                        <div className="card p-3 mb-3" key={review.id}>
+                            <strong>{review.name}</strong>
+                            <p>
+                                {review.text}
+                            </p>
+                        </div>
+                    )}
+                </div>
+            </section>
+        </>
     );
 }
