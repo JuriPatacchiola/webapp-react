@@ -8,7 +8,7 @@ export default function SingleFilmCard({ film }) {
             <div className="col">
                 <Link to={`/movies/${film.id}`} className="text-decoration-none">
                     <div className="card">
-                        <img src={film.image} alt="" className="card-img-top" />
+                        <img src={`http://localhost:3000/movies_cover/${film.image}`} alt="" className="card-img-top" />
                         <div className="card-body">
                             <h3 className="card-title">
                                 {film.title}

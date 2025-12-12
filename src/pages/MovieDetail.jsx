@@ -17,7 +17,7 @@ export default function MovieDetail() {
         <>
             <div className="container py-4">
                 <h1>{film?.title}</h1>
-                <img src={film?.image} alt={film?.title} className="img-fluid mb-4" />
+                <img src={`http://localhost:3000/movies_cover/${film.image}`} alt="" />
                 <p>{film?.abstract}</p>
                 <p>{film?.description}</p>
 
