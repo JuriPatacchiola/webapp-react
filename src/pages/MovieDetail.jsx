@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import FormReview from "../components/FormReview";
 
 export default function MovieDetail() {
     const { id } = useParams();
@@ -22,6 +23,9 @@ export default function MovieDetail() {
                 <p>{film?.description}</p>
 
             </div>
+            <hr />
+            <FormReview filmId={id} />
+            <hr />
             <section id="reviewsList">
                 <div className="container">
                     <h3 className="mb-4">Reviews</h3>
