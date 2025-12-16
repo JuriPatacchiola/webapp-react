@@ -1,20 +1,19 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import FilmsList from "../components/FilmsList"
+import axios from "axios";
+import { useEffect, useState } from "react";
+import FilmsList from "../components/FilmsList";
+import { useLoader } from "../context/LoaderContext";
 
 export default function Home() {
-
-    const [films, setFilms] = useState([])
+    const [films, setFilms] = useState([]);
+    const { show, hide } = useLoader();
 
     useEffect(() => {
+        show();
         axios.get('http://localhost:3000/movies')
-            .then(response => {
-                console.log(response);
-                setFilms(response.data)
-            }).catch(err => {
-                console.log(err.message)
-            })
-    }, [])
+            .then(response => setFilms(response.data))
+            .catch(err => console.log(err))
+            .finally(() => hide());
+    }, []);
 
     return (
         <>
@@ -22,16 +21,15 @@ export default function Home() {
                 <div className="container-fluid py-5">
                     <h1 className="display-5 fw-bold">Films Reviews App</h1>
                     <p className="col-md-8 fs-4">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in rerum ea labore modi, aperiam aliquam illum consequuntur dolor. Ducimus facilis aliquam nisi nam non inventore dicta qui similique a!
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit...
                     </p>
                     <button className="btn btn-primary btn-lg" type="button">
-                        Reed more
+                        Read more
                     </button>
                 </div>
             </div>
 
             <FilmsList films={films} />
-
         </>
-    )
+    );
 }
