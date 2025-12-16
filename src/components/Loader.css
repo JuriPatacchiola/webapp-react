@@ -1,6 +1,5 @@
 .loader-backdrop {
     position: fixed;
-    /* deve coprire tutta la finestra */
     top: 0;
     left: 0;
     width: 100%;
@@ -10,7 +9,6 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    /* deve essere sopra tutti gli altri elementi */
 }
 
 .spinner {
