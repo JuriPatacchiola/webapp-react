@@ -28,7 +28,6 @@ export default function MovieDetail() {
             <div className="container py-4">
                 <h1 className="mb-4">{film.title}</h1>
 
-                {/* Sezione immagine + testo affiancati */}
                 <div className="row mb-4">
                     <div className="col-md-4">
                         <img
@@ -40,7 +39,7 @@ export default function MovieDetail() {
                     </div>
                     <div className="col-md-8 d-flex flex-column justify-content-center">
                         <p className="fw-bold">{film.abstract}</p>
-                        <p><i class="bi bi-person-badge"></i> {film.director}</p>
+                        <p><i className="bi bi-person-badge"></i> {film.director}</p>
                         <p>{film.genre}</p>
                     </div>
                 </div>
